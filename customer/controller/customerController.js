@@ -192,7 +192,7 @@ function renderCart() {
   flashCartCount();
 }
 
-/* 7) Checkout -> ở đây chỉ clear cart (mô phỏng) */
+/* 7) Checkout -> clear cart (mô phỏng) */
 $("#checkoutBtn").addEventListener("click", ()=>{
   if (!cart.length) return alert("Giỏ hàng trống");
   // mô phỏng thanh toán
