@@ -14,12 +14,14 @@ body {
   margin:0; font-family: Inter, Roboto, Arial, sans-serif; background:var(--bg); color:#111;
 }
 .brand span {
-  font-size: 24px;
-  font-weight: bold;
-  background: linear-gradient(90deg, #edeff1, #ff6ec7, #ff9966);
+  font-size: 20px;
+  background: linear-gradient(90deg, #f36eb1, #df834e, #2af598);
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
+  background-clip: text;
+  color: transparent;
 }
+
 
 /* NAV */
 .nav { background: linear-gradient(180deg,#2d70ab,transparent); border-bottom:1px solid rgba(0,0,0,0.04); position:sticky; top:0; z-index:20; }
