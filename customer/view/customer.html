@@ -1,102 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cửa hàng - Customer</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- NAV -->
-  <header class="nav">
-    <div class="nav-inner">
-      <div class="brand">
-        <img src="https://invietnhat.vn/wp-content/uploads/2023/08/logo-shop-thoi-trang-nu-6.jpg" alt="logo" class="logo">
-        <span>Fashion Shop</span>
-      </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cửa hàng - Customer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-      <div class="search-area">
-        <input id="searchInput" placeholder="Tìm sản phẩm, ví dụ: áo, giày...">
-      </div>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-slideshow">
+      <div class="bg"></div>
+      <div class="bg"></div>
+      <div class="bg"></div>
+      <div class="bg"></div>
+    </div>
 
-      <div class="tools">
-        <select id="categorySelect"></select>
-        <select id="sortSelect">
-          <option value="">Sắp xếp</option>
-          <option value="price-asc">Giá: thấp → cao</option>
-          <option value="price-desc">Giá: cao → thấp</option>
-        </select>
-        <button id="cartBtn" class="cart-btn" onclick="shop.toggleCartSidebar(true)">
-          Giỏ (<span id="cartCount"></span>)
+    <!-- NAV -->
+    <header class="nav">
+      <div class="nav-inner">
+        <div class="brand">
+          <img
+            src="https://invietnhat.vn/wp-content/uploads/2023/08/logo-shop-thoi-trang-nu-6.jpg"
+            alt="logo"
+            class="logo"
+          />
+          <span>Fashion Shop</span>
+        </div>
+
+        <div class="search-area">
+          <input
+            id="searchInput"
+            placeholder="Tìm sản phẩm, ví dụ: áo, giày..."
+          />
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        </div>
+
+        <div class="tools">
+          <select id="categorySelect"></select>
+          <select id="sortSelect">
+            <option value="">Sắp xếp</option>
+            <option value="price-asc">Giá: thấp → cao</option>
+            <option value="price-desc">Giá: cao → thấp</option>
+          </select>
+          <button
+            id="cartBtn"
+            class="cart-btn"
+            onclick="shop.toggleCartSidebar(true)"
+          >
+            <i class="fa-solid fa-bag-shopping"></i>
+
+            Giỏ (<span id="cartCount"></span>)
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <h1>CÔNG NGHỆ MỚI - HIỆN ĐẠI MỚI</h1>
+        <p>
+          Chào mừng bạn đến cửa hàng của chúng tôi, hy vọng sản phẩm của chúng
+          tôi sẽ được bạn yêu thích
+        </p>
+        <a href="#products" class="btn btn-cta pink">Mua ngay</a>
+      </div>
+      <div class="hero-right">
+        <img
+          src="https://lamia.com.vn/storage/anh-seo/dam-da-hoi-dep-sang-trong.jpg"
+          alt="hero image"
+        />
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <main class="container" id="products">
+      <h2 class="section-title">Sản phẩm nổi bật</h2>
+      <div id="productList" class="grid"></div>
+    </main>
+
+    <!-- CART SIDEBAR -->
+    <aside id="cartSidebar" class="cart-sidebar">
+      <div class="cart-head">
+        <h3>Giỏ hàng</h3>
+        <button id="cartClose" onclick="shop.toggleCartSidebar(false)">
+          ✕
         </button>
       </div>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <h1>PHONG CÁCH SANG TRỌNG - THỜI TRANG MỖI NGÀY</h1>
-      <p>Chào mừng bạn đến cửa hàng của chúng tôi, hy vọng sản phẩm của chúng tôi sẽ được bạn yêu thích</p>
-      <a href="#products" class="btn btn-cta pink">Mua ngay</a>
-    </div>
-    <div class="hero-right">
-      <img src="https://lamia.com.vn/storage/anh-seo/dam-da-hoi-dep-sang-trong.jpg" alt="hero image">
-    </div>
-  </section>
-
-  <!-- PRODUCTS -->
-  <main class="container" id="products">
-    <h2 class="section-title">Sản phẩm nổi bật</h2>
-    <div id="productList" class="grid"></div>
-  </main>
-
-  <!-- CART SIDEBAR -->
-  <aside id="cartSidebar" class="cart-sidebar">
-    <div class="cart-head">
-      <h3>Giỏ hàng</h3>
-      <button id="cartClose" onclick="shop.toggleCartSidebar(false)">✕</button>
-    </div>
-    <div id="cartItems" class="cart-items"></div>
-    <div id="cartSummary" class="cart-summary"></div>
-    <div class="cart-actions">
-      <button id="checkoutBtn" class="btn btn-primary" disabled>Thanh toán</button>
-    </div>
-  </aside>
-
-  <!-- PRODUCT DETAIL MODAL -->
-  <div id="modal" class="modal">
-    <div class="modal-body">
-      <button id="modalClose" class="modal-close">✕</button>
-      <div class="modal-left">
-        <img id="modalImg" src="" alt="product">
+      <div id="cartItems" class="cart-items"></div>
+      <div id="cartSummary" class="cart-summary"></div>
+      <div class="cart-actions">
+        <button id="checkoutBtn" class="btn btn-primary" disabled>
+          Thanh toán
+        </button>
       </div>
-      <div class="modal-right">
-        <h2 id="modalTitle"></h2>
-        <p id="modalPrice" class="modal-price"></p>
-        <p id="modalDesc"></p>
-        <button id="modalAddBtn" class="btn btn-primary">Thêm vào giỏ</button>
+    </aside>
+
+    <!-- PRODUCT DETAIL MODAL -->
+    <div id="modal" class="modal">
+      <div class="modal-body">
+        <button id="modalClose" class="modal-close">✕</button>
+        <div class="modal-left">
+          <img id="modalImg" src="" alt="product" />
+        </div>
+        <div class="modal-right">
+          <h2 id="modalTitle"></h2>
+          <p id="modalPrice" class="modal-price"></p>
+          <p id="modalDesc"></p>
+          <button id="modalAddBtn" class="btn btn-primary">Thêm vào giỏ</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  
-
-  <script type="module">
-    import { initShop } from "../controller/customerController.js";
-    // mount modal close / cart toggle behavior are in controller; just init
-    window.addEventListener("DOMContentLoaded", ()=> initShop());
-  </script>
-  <footer>
-  <div class="footer-links">
-    <p>
-      <a href="#" target="_blank">Facebook</a> |
-      <a href="#" target="_blank">Zalo</a>
-    </p>
-    <p>Hotline: <a href="tel:1900xxxx">1900 xxxx</a></p>
-    <p>Địa chỉ: 123 Đường ABC, Quận 1, TP.HCM</p>
-  </div>
-</footer>
-
-</body>
+    <script type="module">
+      import { initShop } from "../controller/customerController.js";
+      // mount modal close / cart toggle behavior are in controller; just init
+      window.addEventListener("DOMContentLoaded", () => initShop());
+    </script>
+    <footer>
+      <div class="footer-links">
+        <p>
+          <a href="#" target="_blank">Facebook</a> |
+          <a href="#" target="_blank">Zalo</a>
+        </p>
+        <p>Hotline: <a href="tel:1900xxxx">1900 xxxx</a></p>
+        <p>Địa chỉ: 123 Đường ABC, Quận 1, TP.HCM</p>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -1,0 +1,371 @@
+// 🎨 Palette
+$bg: #6192c9
+$card: #ffffff
+$accent: #e4e6e7
+$primary: #3b82f6
+$muted: #64748b
+$soft: #eef8ff
+$radius: 12px
+
+// 🌍 Global
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+  font-family: Inter, Roboto, Arial, sans-serif
+  min-height: 100vh
+  color: #fff
+  position: relative
+  overflow-x: hidden
+
+// 🎬 Background Slideshow
+.bg-slideshow
+  position: fixed
+  inset: 0
+  z-index: 0
+  overflow: hidden
+
+  .bg
+    position: absolute
+    inset: 0
+    background-size: cover
+    background-position: center
+    opacity: 0
+    animation: fadeCycle 24s infinite
+    transition: opacity 1.5s ease-in-out
+
+  .bg:nth-child(1)
+    background-image: url("https://haycafe.vn/wp-content/uploads/2022/01/Background-cong-nghe-4k.jpg")
+    animation-delay: 0s
+
+  .bg:nth-child(2)
+    background-image: url("https://freenice.net/wp-content/uploads/2021/09/hinh-nen-sam-sung.jpg")
+    animation-delay: 6s
+
+  .bg:nth-child(3)
+    background-image: url("https://thuthuatnhanh.com/wp-content/uploads/2022/12/hinh-nen-iphone-14-3d.jpg")
+    animation-delay: 12s
+
+  .bg:nth-child(4)
+    background-image: url("https://wallpaperaccess.com/full/2115918.jpg")
+    animation-delay: 18s
+
+@keyframes fadeCycle
+  0%, 20%
+    opacity: 1
+  25%, 100%
+    opacity: 0
+
+// Overlay đen mờ
+body::before
+  content: ""
+  position: fixed
+  inset: 0
+  background: rgba(0, 0, 0, 0.9)
+  z-index: 1
+
+body > *
+  position: relative
+  z-index: 2
+
+// 🔥 Brand
+.brand
+  display: flex
+  gap: 8px
+  align-items: center
+  font-weight: 700
+  color: $primary
+
+  span
+    font-size: 20px
+    background: linear-gradient(90deg, #f36eb1, #df834e, #2af598)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    background-clip: text
+
+// 🌐 NAV
+.nav
+  background: linear-gradient(180deg, #123e90, transparent)
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04)
+  position: sticky
+  top: 0
+  z-index: 20
+
+  .nav-inner
+    max-width: 1100px
+    margin: 0 auto
+    display: flex
+    gap: 12px
+    align-items: center
+    padding: 12px 18px
+
+  .logo
+    width: 36px
+    height: 36px
+    object-fit: cover
+    border-radius: 8px
+
+  .search-area
+    flex: 1
+    position: relative
+
+    input
+      width: 100%
+      padding: 10px 34px 10px 12px
+      border-radius: 8px
+      border: 1px solid rgba(0, 0, 0, 0.06)
+      background: white
+
+    .search-icon
+      position: absolute
+      right: 12px
+      top: 50%
+      transform: translateY(-50%)
+      color: #64748b
+      font-size: 16px
+      pointer-events: none
+
+  .tools
+    display: flex
+    gap: 8px
+    align-items: center
+
+    select, button
+      padding: 8px 10px
+      border-radius: 8px
+      border: 1px solid rgba(0, 0, 0, 0.06)
+      background: white
+
+    .cart-btn
+      cursor: pointer
+
+// 🦸 HERO
+.hero
+  max-width: 1100px
+  margin: 28px auto
+  display: flex
+  gap: 20px
+  padding: 0 18px
+  align-items: center
+
+  .hero-left
+    flex: 1
+
+    h1
+      font-size: 31px
+      line-height: 1.3
+      background: linear-gradient(90deg, #ff9966, #4facfe, #ff6ec7, #ff9966)
+      background-size: 300% auto
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      display: inline-block
+      animation: gradientRun 6s linear infinite
+
+  .hero-right
+    flex: 1
+    text-align: right
+
+  img
+    width: 320px
+    border-radius: 14px
+    box-shadow: 0 8px 30px rgba(43, 70, 89, 0.07)
+
+@keyframes gradientRun
+  0%
+    background-position: 0% center
+  100%
+    background-position: 200% center
+
+// 🎛 Buttons
+.btn
+  border: 0
+  padding: 10px 14px
+  border-radius: 10px
+  cursor: pointer
+
+  &-primary
+    background: $primary
+    color: white
+
+  &-outline
+    background: transparent
+    border: 1px solid rgba(0, 0, 0, 0.08)
+
+  &-cta
+    background: $accent
+
+// 🛍 PRODUCT GRID
+.container
+  max-width: 1100px
+  margin: 10px auto
+  padding: 0 18px 80px
+
+.section-title
+  margin: 12px 0
+  color: #fff
+  text-align: center
+
+.grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))
+  gap: 16px
+
+.card
+  background: $card
+  border-radius: $radius
+  padding: 14px
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05)
+  display: flex
+  flex-direction: column
+  gap: 8px
+
+  .card-thumb
+    height: 160px
+    display: flex
+    align-items: center
+    justify-content: center
+    overflow: hidden
+    border-radius: 10px
+    background: $soft
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  .card-title
+    font-size: 16px
+    margin: 0
+
+  .card-price
+    color: $primary
+    font-weight: 700
+    margin-top: 6px
+
+  .card-desc
+    color: $muted
+    font-size: 13px
+    line-height: 1.2
+    height: 36px
+    overflow: hidden
+
+  .card-actions
+    margin-top: auto
+    display: flex
+    gap: 8px
+    align-items: center
+    justify-content: space-between
+
+    .btn-add
+      flex: 1
+
+// 🛒 CART SIDEBAR
+.cart-sidebar
+  position: fixed
+  right: -420px
+  top: 0
+  height: 100vh
+  width: 420px
+  background: $card
+  box-shadow: -10px 0 30px rgba(2, 6, 23, 0.08)
+  transition: right 0.28s ease
+  padding: 16px
+  z-index: 40
+  overflow: auto
+
+  &.open
+    right: 0
+
+  .cart-head
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 8px
+
+  .cart-items
+    .cart-row
+      display: flex
+      gap: 10px
+      padding: 10px 6px
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04)
+      align-items: center
+
+      img
+        width: 60px
+        height: 60px
+        object-fit: cover
+        border-radius: 8px
+
+      .meta
+        flex: 1
+
+      .row-total
+        font-weight: 700
+        color: $primary
+
+// 📦 MODAL
+.modal
+  position: fixed
+  inset: 0
+  display: none
+  align-items: center
+  justify-content: center
+  background: rgba(0, 0, 0, 0.4)
+  z-index: 50
+
+  &.open
+    display: flex
+
+  .modal-body
+    width: min(900px, 94%)
+    background: white
+    border-radius: 14px
+    display: flex
+    gap: 12px
+    padding: 18px
+
+    .modal-left img
+      width: 320px
+      height: 320px
+      object-fit: cover
+      border-radius: 12px
+
+    .modal-right
+      flex: 1
+
+  .modal-close
+    position: absolute
+    right: 18px
+    top: 18px
+
+// 👣 FOOTER
+footer
+  background: #1e293b
+  color: white
+  text-align: center
+  padding: 20px
+  margin-top: 40px
+
+  a
+    color: #38bdf8
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+
+// 📱 Responsive
+@media (max-width: 880px)
+  .hero
+    flex-direction: column
+    text-align: center
+
+  .modal-body
+    flex-direction: column
+
+  .cart-sidebar
+    width: 100%
+    right: -100%
+
+    &.open
+      right: 0
