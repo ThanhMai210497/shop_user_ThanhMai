@@ -1,5 +1,5 @@
 // 🎨 Palette
-$bg: #6192c9
+$bg: #07284d
 $card: #ffffff
 $accent: #e4e6e7
 $primary: #3b82f6
@@ -15,57 +15,12 @@ body
   margin: 0
   font-family: Inter, Roboto, Arial, sans-serif
   min-height: 100vh
-  color: #fff
+  color: #062442
   position: relative
   overflow-x: hidden
 
-// 🎬 Background Slideshow
-.bg-slideshow
-  position: fixed
-  inset: 0
-  z-index: 0
-  overflow: hidden
 
-  .bg
-    position: absolute
-    inset: 0
-    background-size: cover
-    background-position: center
-    opacity: 0
-    animation: fadeCycle 24s infinite
-    transition: opacity 1.5s ease-in-out
-
-  .bg:nth-child(1)
-    background-image: url("https://haycafe.vn/wp-content/uploads/2022/01/Background-cong-nghe-4k.jpg")
-    animation-delay: 0s
-
-  .bg:nth-child(2)
-    background-image: url("https://freenice.net/wp-content/uploads/2021/09/hinh-nen-sam-sung.jpg")
-    animation-delay: 6s
-
-  .bg:nth-child(3)
-    background-image: url("https://thuthuatnhanh.com/wp-content/uploads/2022/12/hinh-nen-iphone-14-3d.jpg")
-    animation-delay: 12s
-
-  .bg:nth-child(4)
-    background-image: url("https://wallpaperaccess.com/full/2115918.jpg")
-    animation-delay: 18s
-
-@keyframes fadeCycle
-  0%, 20%
-    opacity: 1
-  25%, 100%
-    opacity: 0
-
-// Overlay đen mờ
-body::before
-  content: ""
-  position: fixed
-  inset: 0
-  background: rgba(0, 0, 0, 0.9)
-  z-index: 1
-
-body > *
+// body > *
   position: relative
   z-index: 2
 
@@ -203,7 +158,7 @@ body > *
 
 .section-title
   margin: 12px 0
-  color: #fff
+  color: #f7f3f3
   text-align: center
 
 .grid
