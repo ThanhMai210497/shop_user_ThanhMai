@@ -228,3 +228,8 @@ window.shop = {
   initShop,
   toggleCartSidebar,
 };
+
+document.getElementById("policyCheck").addEventListener("change", (e) => {
+  document.getElementById("checkoutBtn").disabled = !e.target.checked;
+});
+

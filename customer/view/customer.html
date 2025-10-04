@@ -127,21 +127,53 @@
     </main>
 
     <!-- CART SIDEBAR -->
-    <aside id="cartSidebar" class="cart-sidebar">
-      <div class="cart-head">
-        <h3>Giỏ hàng</h3>
-        <button id="cartClose" onclick="shop.toggleCartSidebar(false)">
-          ✕
-        </button>
-      </div>
-      <div id="cartItems" class="cart-items"></div>
-      <div id="cartSummary" class="cart-summary"></div>
-      <div class="cart-actions">
-        <button id="checkoutBtn" class="btn btn-primary" disabled>
-          Thanh toán
-        </button>
-      </div>
-    </aside>
+    
+<aside id="cartSidebar" class="cart-sidebar">
+  <div class="cart-head">
+    <h3>Giỏ hàng</h3>
+    <button id="cartClose" onclick="shop.toggleCartSidebar(false)">
+      ✕
+    </button>
+  </div>
+  <div id="cartItems" class="cart-items"></div>
+
+
+ 
+
+  <!-- Tạm tính -->
+  <div id="cartSummary" class="cart-summary">
+    <p>Tạm tính (<span id="cartCountSummary">0</span> sản phẩm): 
+      <strong id="cartTotal">0₫</strong>
+    </p>
+  </div>
+
+  <!-- Hình thức thanh toán -->
+  <div class="cart-payment">
+    <h4>Hình thức thanh toán</h4>
+    <label>
+      <input type="radio" name="payment" value="cod" checked />
+      Thanh toán tiền mặt khi nhận hàng
+    </label>
+    <label>
+      <input type="radio" name="payment" value="bank" />
+      Chuyển khoản ngân hàng
+    </label>
+  </div>
+
+  <!-- Chính sách -->
+  <div class="cart-policy">
+    <label>
+      <input type="checkbox" id="policyCheck" />
+      Tôi đồng ý với <a href="#">Chính sách xử lý dữ liệu cá nhân</a>
+    </label>
+  </div>
+
+  <!-- Nút đặt hàng -->
+  <div class="cart-actions">
+    <button id="checkoutBtn" class="btn-order" disabled>Đặt hàng</button>
+  </div>
+</aside>
+
 
     <!-- PRODUCT DETAIL MODAL -->
     <div id="modal" class="modal">
