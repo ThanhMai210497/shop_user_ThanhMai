@@ -2,7 +2,7 @@
 $bg: #07284d
 $card: #ffffff
 $accent: #e4e6e7
-$primary: #3b82f6
+$primary: #153b78
 $muted: #64748b
 $soft: #eef8ff
 $radius: 12px
@@ -36,7 +36,7 @@ body
 
 // 🌐 NAV
 .nav
-  background: linear-gradient(180deg, #123e90, transparent)
+  background: linear-gradient(180deg, #062152, transparent)
   border-bottom: 1px solid rgba(0, 0, 0, 0.04)
   position: sticky
   top: 0
@@ -140,10 +140,10 @@ body
 
   &-outline
     background: transparent
-    border: 1px solid rgba(0, 0, 0, 0.08)
+    border: 1px solid rgba(229, 91, 6, 0.08)
 
   &-cta
-    background: $accent
+    background:#ff914d
 
 // 🛍 PRODUCT GRID
 .container
@@ -341,32 +341,89 @@ body
     top: 18px
 
 // 👣 FOOTER
-footer
-  background: #1e293b
-  color: white
-  text-align: center
-  padding: 20px
-  margin-top: 40px
+// footer
+//   background: #1e293b
+//   color: white
+//   text-align: center
+//   padding: 20px
+//   margin-top: 40px
 
-  a
-    color: #38bdf8
-    text-decoration: none
+//   a
+//     color: #38bdf8
+//     text-decoration: none
 
-    &:hover
-      text-decoration: underline
+//     &:hover
+//       text-decoration: underline
 
 // 📱 Responsive
-@media (max-width: 880px)
-  .hero
-    flex-direction: column
+// @media (max-width: 880px)
+//   .hero
+//     flex-direction: column
+//     text-align: center
+
+//   .modal-body
+//     flex-direction: column
+
+//   .cart-sidebar
+//     width: 100%
+//     right: -100%
+
+//     &.open
+//       right: 0
+// 👣 FOOTER
+footer
+  background: #0e3d5f
+  color: #fff
+  padding: 40px 20px 20px
+  font-size: 14px
+
+  .footer-container
+    max-width: 1100px
+    margin: auto
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
+    gap: 20px
+
+  h4
+    font-size: 15px
+    margin-bottom: 12px
+    color: #ffd700
+
+  a
+    color: #ccc
+    text-decoration: none
+    &:hover
+      color: #fff
+
+  .social-links a
+    font-size: 18px
+    margin-right: 10px
+    color: #fff
+
+  .newsletter
+    display: flex
+    input
+      flex: 1
+      padding: 8px
+      border: none
+      border-radius: 4px 0 0 4px
+    button
+      background: #df661a
+      border: none
+      color: white
+      padding: 8px 12px
+      border-radius: 0 4px 4px 0
+      cursor: pointer
+
+  .app-links img
+    width: 120px
+    margin-top: 10px
+    display: block
+
+  .footer-bottom
     text-align: center
-
-  .modal-body
-    flex-direction: column
-
-  .cart-sidebar
-    width: 100%
-    right: -100%
-
-    &.open
-      right: 0
+    border-top: 1px solid rgba(255,255,255,0.1)
+    margin-top: 20px
+    padding-top: 12px
+    font-size: 13px
+    color: #bbb

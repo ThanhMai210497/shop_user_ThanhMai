@@ -127,53 +127,50 @@
     </main>
 
     <!-- CART SIDEBAR -->
-    
-<aside id="cartSidebar" class="cart-sidebar">
-  <div class="cart-head">
-    <h3>Giỏ hàng</h3>
-    <button id="cartClose" onclick="shop.toggleCartSidebar(false)">
-      ✕
-    </button>
-  </div>
-  <div id="cartItems" class="cart-items"></div>
 
+    <aside id="cartSidebar" class="cart-sidebar">
+      <div class="cart-head">
+        <h3>Giỏ hàng</h3>
+        <button id="cartClose" onclick="shop.toggleCartSidebar(false)">
+          ✕
+        </button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
 
- 
+      <!-- Tạm tính -->
+      <div id="cartSummary" class="cart-summary">
+        <p>
+          Tạm tính (<span id="cartCountSummary">0</span> sản phẩm):
+          <strong id="cartTotal">0₫</strong>
+        </p>
+      </div>
 
-  <!-- Tạm tính -->
-  <div id="cartSummary" class="cart-summary">
-    <p>Tạm tính (<span id="cartCountSummary">0</span> sản phẩm): 
-      <strong id="cartTotal">0₫</strong>
-    </p>
-  </div>
+      <!-- Hình thức thanh toán -->
+      <div class="cart-payment">
+        <h4>Hình thức thanh toán</h4>
+        <label>
+          <input type="radio" name="payment" value="cod" checked />
+          Thanh toán tiền mặt khi nhận hàng
+        </label>
+        <label>
+          <input type="radio" name="payment" value="bank" />
+          Chuyển khoản ngân hàng
+        </label>
+      </div>
 
-  <!-- Hình thức thanh toán -->
-  <div class="cart-payment">
-    <h4>Hình thức thanh toán</h4>
-    <label>
-      <input type="radio" name="payment" value="cod" checked />
-      Thanh toán tiền mặt khi nhận hàng
-    </label>
-    <label>
-      <input type="radio" name="payment" value="bank" />
-      Chuyển khoản ngân hàng
-    </label>
-  </div>
+      <!-- Chính sách -->
+      <div class="cart-policy">
+        <label>
+          <input type="checkbox" id="policyCheck" />
+          Tôi đồng ý với <a href="#">Chính sách xử lý dữ liệu cá nhân</a>
+        </label>
+      </div>
 
-  <!-- Chính sách -->
-  <div class="cart-policy">
-    <label>
-      <input type="checkbox" id="policyCheck" />
-      Tôi đồng ý với <a href="#">Chính sách xử lý dữ liệu cá nhân</a>
-    </label>
-  </div>
-
-  <!-- Nút đặt hàng -->
-  <div class="cart-actions">
-    <button id="checkoutBtn" class="btn-order" disabled>Đặt hàng</button>
-  </div>
-</aside>
-
+      <!-- Nút đặt hàng -->
+      <div class="cart-actions">
+        <button id="checkoutBtn" class="btn-order" disabled>Đặt hàng</button>
+      </div>
+    </aside>
 
     <!-- PRODUCT DETAIL MODAL -->
     <div id="modal" class="modal">
@@ -242,14 +239,67 @@
       })();
     </script>
 
-    <footer>
-      <div class="footer-links">
-        <p>
-          <a href="#" target="_blank">Facebook</a> |
-          <a href="#" target="_blank">Zalo</a>
-        </p>
-        <p>Hotline: <a href="tel:1900xxxx">1900 xxxx</a></p>
-        <p>Địa chỉ: 123 Đường ABC, Quận 1, TP.HCM</p>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>Hỗ trợ khách hàng</h4>
+          <p>Hotline: <a href="tel:1900xxxx">1900 xxxx</a></p>
+          <p><a href="#">Các câu hỏi thường gặp</a></p>
+          <p><a href="#">Hướng dẫn đặt hàng</a></p>
+          <p><a href="#">Chính sách đổi trả</a></p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Về chúng tôi</h4>
+          <p><a href="#">Giới thiệu</a></p>
+          <p><a href="#">Tuyển dụng</a></p>
+          <p><a href="#">Liên hệ</a></p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kết nối</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/CellphoneSVietnam"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/cellphonesvn/#"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="https://www.tiktok.com/@cellphones.official"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+        
+          </div>
+
+          <!-- vd: link tới -->
+        </div>
+
+        <div class="footer-col">
+          <h4>Đăng ký nhận tin</h4>
+          <form class="newsletter">
+            <input type="email" placeholder="Email của bạn" required />
+            <button type="submit">Đăng ký</button>
+          </form>
+          <div class="app-links">
+            <div>
+              <a href="https://www.apple.com/app-store/" target="_blank"
+                >AppStore</a
+              >
+            </div>
+
+            <div>
+              <a
+                href="https://play.google.com/store/games?device=windows&pli=1"
+                target="_blank"
+                >Google Play</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 Intelligence SmartPhone. All rights reserved.</p>
       </div>
     </footer>
   </body>
